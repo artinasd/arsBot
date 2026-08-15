@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ProductVisual from "@/components/ui/ProductVisual";
@@ -16,8 +18,6 @@ function Arrow() {
 }
 
 export default function HomePage() {
-  const featuredProducts = products.filter((product) => product.featured);
-
   return (
     <div id="top" className="overflow-hidden">
       <Header />
@@ -140,21 +140,23 @@ export default function HomePage() {
                 <p className="mb-3 text-xs font-semibold text-[#c8ff3d]">04 / مجله نُوا</p>
                 <h2 className="text-4xl font-bold tracking-[-0.05em] sm:text-5xl">چیزهایی که فکر می‌کنیم.</h2>
               </div>
-              <a href="#all-articles" className="hidden items-center gap-2 text-xs font-semibold text-white/45 transition hover:text-white sm:flex">همه مطالب <Arrow /></a>
+              <Link href="/magazine" className="hidden items-center gap-2 text-xs font-semibold text-white/45 transition hover:text-white sm:flex">همه مطالب <Arrow /></Link>
             </div>
             <div className="grid gap-5 md:grid-cols-3">
               {articles.map((article, index) => (
                 <article key={article.slug} className={`group ${index === 0 ? "md:col-span-2" : ""}`}>
-                  <div className={`relative overflow-hidden rounded-[28px] border border-white/8 bg-[#111216] ${index === 0 ? "aspect-[1.75/1]" : "aspect-[1.1/1]"}`}>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_35%,rgba(200,255,61,0.12),transparent_28%),linear-gradient(145deg,#17191e,#0c0d10)] transition duration-500 group-hover:scale-105" />
-                    <div className="absolute bottom-6 right-6 left-6 flex items-end justify-between gap-4">
-                      <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-[10px] text-white/45 backdrop-blur">{article.category}</span>
-                      <span className="text-[10px] text-white/25">{article.readTime}</span>
+                  <Link href={`/magazine/${article.slug}`} className="block">
+                    <div className={`relative overflow-hidden rounded-[28px] border border-white/8 bg-[#111216] ${index === 0 ? "aspect-[1.75/1]" : "aspect-[1.1/1]"}`}>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_65%_35%,rgba(200,255,61,0.12),transparent_28%),linear-gradient(145deg,#17191e,#0c0d10)] transition duration-500 group-hover:scale-105" />
+                      <div className="absolute bottom-6 right-6 left-6 flex items-end justify-between gap-4">
+                        <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1.5 text-[10px] text-white/45 backdrop-blur">{article.category}</span>
+                        <span className="text-[10px] text-white/25">{article.readTime}</span>
+                      </div>
                     </div>
-                  </div>
-                  <p className="mt-5 text-xs text-white/25">{article.date}</p>
-                  <h3 className="mt-2 text-xl font-bold leading-8 tracking-tight transition group-hover:text-[#c8ff3d]">{article.title}</h3>
-                  <p className="mt-2 text-sm leading-7 text-white/35">{article.excerpt}</p>
+                    <p className="mt-5 text-xs text-white/25">{article.date}</p>
+                    <h3 className="mt-2 text-xl font-bold leading-8 tracking-tight transition group-hover:text-[#c8ff3d]">{article.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-white/35">{article.excerpt}</p>
+                  </Link>
                 </article>
               ))}
             </div>
