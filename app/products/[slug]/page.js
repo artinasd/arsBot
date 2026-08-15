@@ -38,8 +38,8 @@ export default async function ProductPage({ params }) {
               <p className="mt-4 text-xl font-medium text-slate-500">{product.persianName}</p>
               <p className="mt-7 max-w-xl text-base leading-8 text-slate-500">{product.description}</p>
               <div className="mt-9 flex flex-wrap gap-3">
-                <a href="#specs" className="flex items-center gap-3 rounded-full bg-slate-950 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[#5b5ce2]">مشخصات محصول <Arrow /></a>
-                <a href="mailto:hello@nova.ir" className="rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950">مشاوره محصول</a>
+                <a href="#specs" className="flex items-center gap-3 rounded-full bg-slate-950 px-6 py-3.5 text-sm font-bold !text-white transition hover:bg-[#5b5ce2] hover:!text-white">مشخصات محصول <Arrow /></a>
+                <a href="mailto:hello@nova.ir" className="rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-semibold !text-slate-700 transition hover:border-slate-300 hover:!text-slate-950">مشاوره محصول</a>
               </div>
             </div>
             <ProductVisual product={product} />
