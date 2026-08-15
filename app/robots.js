@@ -1,8 +1,8 @@
-const baseUrl = "https://nova.example";
+import { siteConfig } from "@/lib/site";
 
 export default function robots() {
   return {
     rules: [{ userAgent: "*", allow: "/" }],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${siteConfig.url}/sitemap.xml`,
   };
 }
