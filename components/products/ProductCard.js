@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 import ProductVisual from "@/components/ui/ProductVisual";
 
 export default function ProductCard({ product }) {
   return (
-    <a href={`/products/${product.slug}`} className="group block">
+    <Link href={`/products/${product.slug}`} className="group block">
       <ProductVisual product={product} compact />
       <div className="flex items-start justify-between gap-4 px-1 pt-5">
         <div>
@@ -16,6 +18,6 @@ export default function ProductCard({ product }) {
           </svg>
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
