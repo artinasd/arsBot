@@ -14,7 +14,7 @@ const guardProduct = products.find((product) => product.id === "guard");
 const lightProduct = products.find((product) => product.id === "light");
 
 function Arrow() {
-  return <svg viewBox="0 0 18 18" className="size-4" aria-hidden="true"><path d="M3 9h11M10 5l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+  return <svg viewBox="0 0 18 18" className="size-4 text-black" aria-hidden="true"><path d="M3 9h11M10 5l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
 }
 
 export default function HomePage() {
