@@ -56,7 +56,7 @@ export default async function ProductPage({ params }) {
           <div className="nova-container">
             <div className="grid gap-8 lg:grid-cols-[.65fr_1.35fr] lg:gap-20">
               <div><p className="text-xs font-bold text-[#3158e8]">طراحی شده برای زندگی واقعی</p></div>
-              <div><h2 className="max-w-4xl text-3xl font-bold leading-[1.55] tracking-[-.04em] sm:text-5xl">هر جزئیات، یک دلیل دارد؛ از اولین لمس تا آخرین تعامل.</h2><div className="mt-12 grid gap-px overflow-hidden rounded-[28px] border border-black/8 bg-black/8 sm:grid-cols-3">{product.highlights.map((highlight, index) => <div key={highlight} className="bg-white p-7 sm:p-8"><span className="text-[10px] font-bold text-[#3158e8]">۰{index + ۱}</span><p className="mt-12 text-base font-bold leading-7">{highlight}</p></div>)}</div></div>
+              <div><h2 className="max-w-4xl text-3xl font-bold leading-[1.55] tracking-[-.04em] sm:text-5xl">هر جزئیات، یک دلیل دارد؛ از اولین لمس تا آخرین تعامل.</h2><div className="mt-12 grid gap-px overflow-hidden rounded-[28px] border border-black/8 bg-black/8 sm:grid-cols-3">{product.highlights.map((highlight, index) => <div key={highlight} className="bg-white p-7 sm:p-8"><span className="text-[10px] font-bold text-[#3158e8]">۰{index + 1}</span><p className="mt-12 text-base font-bold leading-7">{highlight}</p></div>)}</div></div>
             </div>
           </div>
         </section>
