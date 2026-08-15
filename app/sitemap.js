@@ -1,24 +1,23 @@
-import { products } from "@/data/products";
 import { articles } from "@/data/articles";
+import { products } from "@/data/products";
+import { siteConfig } from "@/lib/site";
 
-const baseUrl = "https://nova.example";
+const staticRoutes = ["", "/products", "/technology", "/about", "/magazine", "/contact", "/privacy", "/terms"];
 
 export default function sitemap() {
-  const staticRoutes = ["", "/products", "/technology", "/about", "/magazine", "/contact", "/privacy", "/terms"];
-
   return [
     ...staticRoutes.map((route) => ({
-      url: `${baseUrl}${route}`,
+      url: `${siteConfig.url}${route}`,
       changeFrequency: "monthly",
       priority: route === "" ? 1 : 0.7,
     })),
     ...products.map((product) => ({
-      url: `${baseUrl}/products/${product.slug}`,
+      url: `${siteConfig.url}/products/${product.slug}`,
       changeFrequency: "monthly",
       priority: 0.8,
     })),
     ...articles.map((article) => ({
-      url: `${baseUrl}/magazine/${article.slug}`,
+      url: `${siteConfig.url}/magazine/${article.slug}`,
       changeFrequency: "monthly",
       priority: 0.6,
     })),
