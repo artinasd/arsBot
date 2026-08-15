@@ -8,7 +8,8 @@ export const products = [
     tagline: "تمام خانه. یک تجربه.",
     description:
       "مرکز فرماندهی اکوسیستم نُوا؛ جایی که چراغ‌ها، سنسورها و دستگاه‌های هوشمند خانه در یک تجربه‌ی یکپارچه کنار هم قرار می‌گیرند.",
-    accent: "#c8ff3d",
+    accent: "#8b6cff",
+    secondaryAccent: "#54d9ff",
     image: "/images/products/hub.svg",
     featured: true,
     highlights: ["کنترل یکپارچه", "اتصال پایدار", "طراحی مینیمال"],
@@ -28,7 +29,8 @@ export const products = [
     tagline: "هوایی که متوجهش نمی‌شوید.",
     description:
       "تصفیه‌ هوای هوشمند با سنجش لحظه‌ای کیفیت هوا و تنظیم خودکار عملکرد برای محیطی سالم‌تر و آرام‌تر.",
-    accent: "#8de7ff",
+    accent: "#54d9ff",
+    secondaryAccent: "#9b83ff",
     image: "/images/products/air.svg",
     featured: true,
     highlights: ["فیلتر HEPA H13", "سنجش کیفیت هوا", "صدای فوق‌العاده کم"],
@@ -48,7 +50,8 @@ export const products = [
     tagline: "خانه، همیشه حواسش هست.",
     description:
       "یک سنسور کوچک برای تشخیص حرکت، دما و باز و بسته شدن درها؛ دقیق، کم‌مصرف و آماده برای هر سناریو.",
-    accent: "#c9b6ff",
+    accent: "#b49cff",
+    secondaryAccent: "#7ce7ff",
     image: "/images/products/sense.svg",
     featured: false,
     highlights: ["سه حسگر در یک دستگاه", "باتری تا ۱۸ ماه", "هشدار لحظه‌ای"],
@@ -68,7 +71,8 @@ export const products = [
     tagline: "نور، دقیقاً همان‌طور که می‌خواهید.",
     description:
       "سیستم روشنایی هوشمند با میلیون‌ها ترکیب رنگ و سناریوهای قابل تنظیم برای هر لحظه از روز.",
-    accent: "#ffc86b",
+    accent: "#ffb86b",
+    secondaryAccent: "#8b6cff",
     image: "/images/products/light.svg",
     featured: true,
     highlights: ["16 میلیون رنگ", "کنترل شدت نور", "سناریوهای هوشمند"],
@@ -88,7 +92,8 @@ export const products = [
     tagline: "آرامش، حتی وقتی خانه نیستید.",
     description:
       "دوربین امنیتی داخلی با دید در شب، تشخیص هوشمند حرکت و اعلان‌های فوری روی موبایل.",
-    accent: "#ff8f8f",
+    accent: "#ff7e9b",
+    secondaryAccent: "#8b6cff",
     image: "/images/products/guard.svg",
     featured: false,
     highlights: ["تصویر 2K", "دید در شب", "تشخیص هوشمند"],
