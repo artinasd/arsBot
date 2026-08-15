@@ -39,7 +39,7 @@ export default function ContactPage() {
               </div>
               <label className="block text-xs font-semibold text-[#11131a]/55">موضوع<input required className="mt-2 w-full rounded-2xl border border-[#11131a]/10 bg-[#f7f8fb] px-4 py-4 text-sm text-[#11131a] outline-none transition focus:border-[#3158e8] focus:ring-4 focus:ring-[#3158e8]/10" placeholder="موضوع پیام" /></label>
               <label className="block text-xs font-semibold text-[#11131a]/55">پیام<textarea required rows="6" className="mt-2 w-full resize-none rounded-2xl border border-[#11131a]/10 bg-[#f7f8fb] px-4 py-4 text-sm leading-7 text-[#11131a] outline-none transition focus:border-[#3158e8] focus:ring-4 focus:ring-[#3158e8]/10" placeholder="چطور می‌توانیم کمک کنیم؟" /></label>
-              <button type="submit" className="rounded-full bg-[#11131a] px-7 py-3.5 text-sm font-bold text-white transition hover:bg-[#3158e8] focus:outline-none focus:ring-4 focus:ring-[#3158e8]/20">{sent ? "پیام شما ثبت شد ✓" : "ارسال پیام"}</button>
+              <button type="submit" className="rounded-full bg-[#11131a] px-7 py-3.5 text-sm font-bold !text-white transition hover:bg-[#3158e8] hover:!text-white focus:outline-none focus:ring-4 focus:ring-[#3158e8]/20">{sent ? "پیام شما ثبت شد ✓" : "ارسال پیام"}</button>
               {sent && <p className="text-xs text-[#11131a]/45">این فرم در نسخه نمایشی به صورت محلی عمل می‌کند و پیامی به سرور ارسال نمی‌شود.</p>}
             </form>
           </div>
