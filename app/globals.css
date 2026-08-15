@@ -45,6 +45,15 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent-2); outl
 .nova-grid { background-image: linear-gradient(rgba(15,23,42,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,.035) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, black, transparent 82%); }
 .nova-glow { box-shadow: 0 25px 90px rgba(91,92,226,.12), 0 15px 60px rgba(36,168,184,.07); }
 .nova-float { animation: nova-float 7s ease-in-out infinite; }
+
+/* CTA contrast safeguards: keep the named navigation actions readable even when utility classes are overridden. */
+a[href="/products"].bg-slate-950 { color: #ffffff !important; }
+a[href="/products"].bg-slate-950:hover { color: #ffffff !important; }
+a[href="/technology"].bg-slate-950 { color: #ffffff !important; }
+a[href="/technology"].bg-slate-950:hover { color: #ffffff !important; }
+a[href="/contact"].bg-white { color: #0f172a !important; }
+a[href="/contact"].bg-white:hover { color: #0f172a !important; }
+
 @keyframes nova-float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-10px) rotate(.5deg); } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
 @media (max-width:640px) { .nova-container { width:min(100% - 28px,1240px); } }
