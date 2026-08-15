@@ -1,7 +1,9 @@
 import "./globals.css";
 
+import { siteConfig } from "@/lib/site";
+
 export const metadata = {
-  metadataBase: new URL("https://nova.example"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "نُوا | فناوری برای زندگی فردا",
     template: "%s | نُوا",
@@ -16,8 +18,8 @@ export const metadata = {
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
-    locale: "fa_IR",
-    url: "https://nova.example",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
     siteName: "NOVA",
     title: "نُوا | فناوری برای زندگی فردا",
     description: "اکوسیستم ایرانی محصولات هوشمند برای خانه‌ای ساده‌تر، زیباتر و متصل‌تر.",
@@ -31,7 +33,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang={siteConfig.language} dir={siteConfig.direction}>
       <body>{children}</body>
     </html>
   );
