@@ -4,7 +4,7 @@
 NOVA — نُوا
 
 ## Current Version
-0.3.2
+0.3.3
 
 ## Current Development Phase
 Phase 10 — Visual refinement, SEO/accessibility polish, navigation consistency, and production-readiness review.
@@ -19,7 +19,7 @@ artinasd/arsBot
 feature/nova-foundation
 
 ## Latest Commit
-96e3ee2c6ee3623659fcd67c2a2854713a0e016d
+5e2a3c4d0a884fb2b1c15911b713615f0c094175
 
 ## Architecture Summary
 Static Next.js App Router application using React, JavaScript, Tailwind CSS and local JavaScript content modules. No backend, API, database, authentication or authorization layer is required.
@@ -48,8 +48,8 @@ None by design.
 - `/`
 - `/products`
 - `/products/[slug]`
-- `/about`
 - `/technology`
+- `/about`
 - `/magazine`
 - `/magazine/[slug]`
 - `/contact`
@@ -74,6 +74,8 @@ None by design.
 9. Global navigation uses actual application routes rather than page-specific hash anchors.
 10. Internal product and article cards use Next.js `Link`.
 11. ESLint 9 flat configuration is provided through `eslint.config.mjs`.
+12. Site URL configuration is centralized in `lib/site.js` and can be overridden with `NEXT_PUBLIC_SITE_URL` for deployment.
+13. Metadata, sitemap and robots all consume the same centralized site URL.
 
 ## Completed Tasks
 - GitHub write capabilities verified.
@@ -91,35 +93,38 @@ None by design.
 - Product and magazine cards converted to Next.js `Link`.
 - Footer navigation and legal links converted to real routes.
 - Unused homepage variable removed.
+- Centralized site/deployment URL configuration in `lib/site.js`.
+- Updated root metadata, sitemap and robots to use centralized site configuration.
+- User verified lint, runtime and production build successfully after the navigation audit.
 
 ## Current Task
-Continue premium visual and production-readiness review after the navigation consistency pass.
+Continue focused accessibility, responsive, visual and code-quality audit.
 
 ## Next Planned Task
-Focused accessibility, responsive and code-quality audit, followed by final metadata/deployment-domain audit and repository review.
+Inspect responsive/mobile and accessibility-sensitive components, then perform final SEO/deployment configuration review and repository audit.
 
 ## Known Issues
 - Repository name remains `arsBot`.
-- `https://nova.example` is still the placeholder deployment host in metadata/sitemap and must be replaced before production.
+- The default site URL remains `https://nova.example` until a real deployment domain is selected; production deployment should set `NEXT_PUBLIC_SITE_URL`.
 - No real binary product imagery has been added; `ProductVisual` currently generates product art with CSS.
 - Final responsive/accessibility review remains outstanding.
 
 ## Technical Debt
 - Consolidate repeated visual classes where useful.
-- Add final production domain.
+- Add final production domain through `NEXT_PUBLIC_SITE_URL`.
 - Consider generated/static product artwork after visual review.
 
 ## Testing Status
-User-reported local validation: `npm run lint` succeeds, the application runs successfully, and the production build succeeds. These checks were performed by the user locally and were not independently executed by the GitHub connector.
+User-reported local validation after the navigation consistency changes: `npm run lint` succeeds, the application runs successfully, and `npm run build` succeeds. These checks were performed by the user locally and were not independently executed by the GitHub connector.
 
 ## Repository Verification Status
-Navigation-related files were inspected before modification and the resulting changes were written directly to `feature/nova-foundation`. Latest implementation commit before this ledger update: `96e3ee2c6ee3623659fcd67c2a2854713a0e016d`.
+The site configuration, root metadata, sitemap and robots files were inspected and updated directly on `feature/nova-foundation`. Latest implementation commit before this ledger update: `5e2a3c4d0a884fb2b1c15911b713615f0c094175`.
 
 ## Deployment Status
 Not deployed.
 
 ## Notes For Future Continuation
-Do not introduce backend/database infrastructure unless requirements change. Treat user-provided local command output as authoritative local validation. Continue making concrete visual, accessibility and production-readiness improvements rather than repeatedly re-planning the architecture.
+Do not introduce backend/database infrastructure unless requirements change. Treat user-provided local command output as authoritative local validation. Continue making concrete visual, accessibility and production-readiness improvements rather than repeatedly re-planning the architecture. Before production deployment, set `NEXT_PUBLIC_SITE_URL` to the actual canonical HTTPS domain.
 
 ## Conversation Summary
-NOVA is a fictional Iranian smart-home technology company created as a premium Persian RTL portfolio website. The application is static/backend-less and uses Next.js, React, JavaScript, Tailwind CSS and local data. The user confirmed lint, runtime and production build success locally. The latest code audit fixed cross-route navigation issues by replacing page-specific hash navigation with real routes and Next.js `Link` components. The next phase is focused accessibility, responsive, visual and final production-readiness review.
+NOVA is a fictional Iranian smart-home technology company created as a premium Persian RTL portfolio website. The application is static/backend-less and uses Next.js, React, JavaScript, Tailwind CSS and local data. The user confirmed lint, runtime and production build success locally after the navigation consistency audit. This continuation centralized the deployment/site URL in `lib/site.js`, updated root metadata, sitemap and robots to consume it, and made the production domain configurable through `NEXT_PUBLIC_SITE_URL` without inventing a real domain. The next phase is focused accessibility, responsive, visual and final repository review.
