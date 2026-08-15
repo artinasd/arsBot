@@ -6,37 +6,35 @@ export default function ProductVisual({ product, compact = false }) {
 
   return (
     <div
-      className={`group relative isolate overflow-hidden border border-slate-200 bg-white ${compact ? "aspect-[1.05/1] rounded-[28px]" : "aspect-[4/3] rounded-[36px]"}`}
+      className={`group relative isolate overflow-hidden border border-slate-200 bg-slate-100 shadow-[0_20px_70px_rgba(15,23,42,.07)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(15,23,42,.12)] ${compact ? "aspect-[4/4.5] rounded-[30px]" : "aspect-[4/3] rounded-[38px]"}`}
       style={{ "--product-accent": accent }}
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_25%,var(--product-accent),transparent_28%),linear-gradient(145deg,#f8fafc,#eef2f6)] opacity-90" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,.035)_1px,transparent_1px)] bg-[size:44px_44px]" />
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/[0.06] to-transparent" />
-      <div className="absolute inset-[7%] overflow-hidden rounded-[24px] bg-white shadow-[0_30px_80px_rgba(15,23,42,.14)] transition duration-700 group-hover:scale-[1.015]">
-        {imageSrc ? (
-          <img
-            src={imageSrc}
-            alt={`${productName} — ${productPersianName}`}
-            loading={product?.featured && !compact ? "eager" : "lazy"}
-            decoding="async"
-            className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center bg-slate-50 px-8 text-center">
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.14em] text-slate-400">NOVA / PRODUCT</p>
-              <p className="mt-2 text-sm font-semibold text-slate-500">تصویر محصول در دسترس نیست</p>
-            </div>
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={`${productName} — ${productPersianName}`}
+          loading={product?.featured && !compact ? "eager" : "lazy"}
+          decoding="async"
+          className="h-full w-full object-cover transition duration-1000 ease-out group-hover:scale-[1.025]"
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center bg-slate-50 px-8 text-center">
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.14em] text-slate-400">NOVA / PRODUCT</p>
+            <p className="mt-2 text-sm font-semibold text-slate-500">تصویر محصول در دسترس نیست</p>
           </div>
-        )}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-white/10" />
-      </div>
+        </div>
+      )}
+
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-white/10" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white/15 to-transparent" />
+
       <div className="absolute bottom-5 right-5 left-5 flex items-end justify-between gap-4">
-        <div className="rounded-full border border-white/70 bg-white/80 px-3 py-1.5 text-[10px] font-semibold text-slate-700 shadow-sm backdrop-blur-md">
+        <div className="rounded-full border border-white/55 bg-white/88 px-3 py-1.5 text-[10px] font-semibold text-slate-800 shadow-lg backdrop-blur-md">
           {product?.category ?? "محصول"}
         </div>
-        <div className="rounded-full border border-white/70 bg-white/80 px-3 py-1.5 text-[9px] font-medium text-slate-500 shadow-sm backdrop-blur-md">
-          تصویر محصول
+        <div className="grid size-10 place-items-center rounded-full border border-white/60 bg-white/90 text-slate-900 shadow-lg backdrop-blur-md transition duration-300 group-hover:bg-white" aria-hidden="true">
+          <svg viewBox="0 0 18 18" className="size-4 rotate-180" aria-hidden="true"><path d="M3 9h11M10 5l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </div>
       </div>
     </div>
