@@ -11,7 +11,7 @@ export default function ProductVisual({ product, compact = false }) {
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/[0.06] to-transparent" />
       <div className="absolute inset-[7%] overflow-hidden rounded-[24px] bg-white shadow-[0_30px_80px_rgba(15,23,42,.14)] transition duration-700 group-hover:scale-[1.015]">
         <img
-          src={product.imageUrl}
+          src={product.image}
           alt={`${product.name} — ${product.persianName}`}
           loading={product.featured && !compact ? "eager" : "lazy"}
           decoding="async"
@@ -24,7 +24,7 @@ export default function ProductVisual({ product, compact = false }) {
           {product.category}
         </div>
         <div className="rounded-full border border-white/70 bg-white/80 px-3 py-1.5 text-[9px] font-medium text-slate-500 shadow-sm backdrop-blur-md">
-          تصویر محصول / Pexels
+          تصویر محصول
         </div>
       </div>
     </div>
