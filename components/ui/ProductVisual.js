@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ProductVisual({ product, compact = false }) {
   const accent = product?.accent ?? "#5b5ce2";
   const imageSrc = typeof product?.image === "string" && product.image.trim() ? product.image : null;
@@ -10,12 +12,13 @@ export default function ProductVisual({ product, compact = false }) {
       style={{ "--product-accent": accent }}
     >
       {imageSrc ? (
-        <img
+        <Image
           src={imageSrc}
           alt={`${productName} — ${productPersianName}`}
-          loading={product?.featured && !compact ? "eager" : "lazy"}
-          decoding="async"
-          className="h-full w-full object-cover transition duration-1000 ease-out group-hover:scale-[1.025]"
+          fill
+          sizes={compact ? "(max-width: 768px) 90vw, 320px" : "(max-width: 768px) 94vw, 720px"}
+          priority={Boolean(product?.featured && !compact)}
+          className="object-cover transition duration-1000 ease-out group-hover:scale-[1.025]"
         />
       ) : (
         <div className="flex h-full w-full items-center justify-center bg-slate-50 px-8 text-center">
