@@ -16,6 +16,7 @@ export default function ProductVisual({ product, compact = false }) {
           src={product.imageUrl}
           alt={`${product.name} — ${product.persianName}`}
           fill
+          unoptimized
           sizes={compact ? "(max-width: 640px) 100vw, 33vw" : "(max-width: 1024px) 90vw, 600px"}
           className="object-cover transition duration-700 group-hover:scale-[1.035]"
           priority={!compact && product.featured}
